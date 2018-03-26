@@ -1,0 +1,19 @@
+package com.cts.cognizance.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuthenticationController {
+	
+	@PostMapping(value = "/login")
+    public ResponseEntity<?> search(@RequestParam(value = "username", required = true) String userName, @RequestParam(value = "password", required = true) String password) {
+        if(userName.equals("admin") && password.equals("9999")){        	
+        	return ResponseEntity.ok("Welcome to Cognizance");
+        }else{
+        	return ResponseEntity.ok("***Login Failure***");
+        } 
+    }
+}

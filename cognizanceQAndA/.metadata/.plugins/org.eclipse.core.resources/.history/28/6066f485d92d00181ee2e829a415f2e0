@@ -1,0 +1,4 @@
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:mysql://localhost:3306/cognizance_db
+spring.datasource.username=cognizanceUser
+spring.datasource.password=9999

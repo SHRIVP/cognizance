@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Cognizance</title>
+<script type="text/javascript">
+    function submitform(){
+    	var formData = JSON.stringify($("#loginForm").serializeArray());
+    	$.ajax({
+    		  type: "POST",
+    		  url: "http://localhost:8080/cognizance/login",
+    		  data: formData,
+    		  success: function(){},
+    		  dataType: "json",
+    		  contentType : "application/json"
+    		});
+</script>
+</head>
+<body>
+	<form action="myurl" method="POST" name="loginForm">
+		<p>
+			<label for="user_name">User Name:</label> <input type="text"
+				name="user_name" id="username">
+		</p>
+
+		<p>
+			<label for="password">Password :</label> <input type="password"
+				name="password" id="password">
+		</p>
+
+		<input value="Login" type="submit" onclick="submitform()">
+	</form>
+</body>
+</html>

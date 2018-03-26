@@ -1,0 +1,24 @@
+package com.cts.cognizance.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cts.cognizance.model.CognizanceUser;
+
+@RestController
+public class AuthenticationController {
+	
+	@PostMapping(value = "/login")
+    public ResponseEntity<?> login(@Valid @RequestBody CognizanceUser user, Errors errors) {
+        if(user.getUsername().equals("admin") && user.getPassword().equals("9999")){        	
+        	return ResponseEntity.ok("Welcome to Cognizance");
+        }else{
+        	return ResponseEntity.ok("***Login Failure***");
+        } 
+    }
+}

@@ -1,0 +1,5 @@
+package com.cts.cognizance.model;
+
+public class User {
+
+}

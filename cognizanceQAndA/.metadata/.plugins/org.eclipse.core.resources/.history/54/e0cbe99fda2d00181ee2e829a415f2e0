@@ -1,0 +1,35 @@
+package com.cts.cognizance.model;
+
+import javax.persistence.Entity;
+
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.validator.constraints.NotBlank;
+
+@Indexed
+@Entity
+public class CognizanceUser {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	@NotBlank(message = "username required!")
+	private String username;
+	@NotBlank(message = "password required!")
+	private String password;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+}

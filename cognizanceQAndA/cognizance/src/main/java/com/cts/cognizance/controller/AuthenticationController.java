@@ -1,0 +1,32 @@
+package com.cts.cognizance.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cts.cognizance.dao.CognizanceUserRepository;
+import com.cts.cognizance.model.CognizanceUser;
+
+@RestController
+public class AuthenticationController {
+	@Autowired
+	private CognizanceUserRepository userRepository;
+	
+	@PostMapping(value = "/login")
+    public ResponseEntity<?> login(@Valid @RequestBody CognizanceUser user, Errors errors) {
+		Iterable<CognizanceUser> congnizanceUsers=userRepository.findAll();
+		for(CognizanceUser cognizanceUser : congnizanceUsers){
+			if(user.getUsername().equals(cognizanceUser.getUsername()) && user.getPassword().equals(cognizanceUser.getPassword())){        	
+	        	return ResponseEntity.ok("Welcome to Cognizance");
+	        }else{
+	        	return ResponseEntity.ok("***Login Failure***");
+	        } 
+		}
+		return ResponseEntity.ok("***Login Failure***");
+    }
+}

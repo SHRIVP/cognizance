@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Cognizance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<form id="loginForm">
+		<p>
+			<label for="user_name">User Name:</label> <input type="text"
+				name="user_name" id="username">
+		</p>
+
+		<p>
+			<label for="password">Password :</label> <input type="password"
+				name="password" id="password">
+		</p>
+		
+		<button type="submit" id="loginButton"
+                            >Login
+                    </button>
+		
+		<div id="loginMessage"></div>
+		
+	</form>
+	<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.cts.cognizance.dao;
+
+public interface UserRepository {
+
+}

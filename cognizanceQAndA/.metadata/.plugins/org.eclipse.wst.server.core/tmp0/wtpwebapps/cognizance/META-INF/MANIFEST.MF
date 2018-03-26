@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Cognizance-QAndA-WebApp
+Implementation-Version: 0.0.1
+Built-By: 226620
+Implementation-Vendor-Id: com.cts
+Build-Jdk: 1.8.0_71
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
