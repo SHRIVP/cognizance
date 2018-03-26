@@ -36,7 +36,7 @@ function fire_ajax_submit() {
         },
         error: function (e) {
 
-            var json = "<h4>Login Failure</h4><pre>"
+            var json = "<h4>Login Status</h4><pre>"
                 + e.responseText + "</pre>";
             $('#loginMessage').html(json);
 
